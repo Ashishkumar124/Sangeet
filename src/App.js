@@ -43,7 +43,7 @@ function App() {
                 window.location.href = "/";
               }}
             >
-              Sᴀɴɢᴇᴇᴛ 🎶
+              Sᴀɴɢᴇᴇᴛ
             </p>
           </a>
 
@@ -68,18 +68,20 @@ function App() {
       </nav>
 
       <div className='container'>
-        <div className={`row ${isLoading ? "" : "d-none"}`}>
-          <div className='col-12 py-5 text-center'>
-            <div className="loader">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+        {isLoading && (
+          <div className='row'>
+            <div className='col-12 py-5 text-center'>
+              <div className="loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <span className="visually-hidden">Loading...</span>
             </div>
-            <span className="visually-hidden">Loading...</span>
           </div>
-        </div>
+        )}
 
         <div className='row'>
           {tracks.map((element) => {
@@ -90,7 +92,7 @@ function App() {
                     src={element.album.images[0].url}
                     className="card-img-top"
                     alt=""
-                    style={{ width: "100%", height: "150px" }}
+                    style={{ width: "100%", height: "180px" }}
                   />
                   <div className="card-body">
                     <h6 className="card-title">{element.name}</h6>
