@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./loader.css";
-
+import favicon from "../public/%PUBLIC_URL%/favicon.ico";
 function App() {
   const [keyword, setKeyword] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -20,7 +20,7 @@ function App() {
 
   const getTracks = async () => {
     setIsLoading(true);
-    let data = await fetch(`https://v1.nocodeapi.com/ashish2428/spotify/pkedxyFywGrsbCqJ/search?q=${keyword === "" ? "trending" : keyword}&type=track`);
+    let data = await fetch(`https://v1.nocodeapi.com/kl52/spotify/DVXBWgYKkwEbORLy/search?q=${keyword === "" ? "trending" : keyword}&type=track`);
     let convertedData = await data.json();
     setTracks(convertedData.tracks.items);
     setIsLoading(false);
@@ -43,7 +43,7 @@ function App() {
                 window.location.href = "/";
               }}
             >
-              Sᴀɴɢᴇᴇᴛ
+              <img src={favicon} height="50px"></img> Sᴀɴɢᴇᴇᴛ 
             </p>
           </a>
 
